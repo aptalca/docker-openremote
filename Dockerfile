@@ -15,9 +15,8 @@ wget \
 openjdk-6-jdk \
 unzip && \
 export JAVA_HOME=/usr && \
-wget http://sourceforge.net/projects/openremote/files/OpenRemote-Controller-2.1.0.zip/download -O /root/OR.zip && \
-unzip -u /root/OR.zip -d /config/ && \
-cd /config/OpenRemote-Controller-2.1.0/bin && \
-chmod +x openremote.sh
+wget http://sourceforge.net/projects/openremote/files/OpenRemote-Controller-2.1.0.zip/download -O /root/OR.zip 
 
-CMD cd /config/OpenRemote-Controller-2.1.0/bin/ && ./openremote.sh start
+RUN mkdir -p /etc/my_init.d
+ADD firstrun.sh /etc/my_init.d/firstrun.sh
+RUN chmod +x /etc/my_init.d/firstrun.sh
