@@ -12,4 +12,5 @@ chown -R nobody:users /config
 chmod -R g+rw /config
 cd /config/OpenRemote-Controller-2.1.0/bin
 chmod +x openremote.sh
+echo "Starting controller"
 /sbin/setuser nobody sh ./openremote.sh start
