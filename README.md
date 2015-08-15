@@ -1,19 +1,18 @@
-# docker-openremote
+#OpenRemote Controller
 
-OpenRemote Controller docker created for unraid (ymmv for other bases)
+##Install On unRaid:
 
-Installation:
+On unRaid, install from the Community Applications and enter the app folder location and the port for the webUI.
 
-1. Open unRaid GUI (at least unRaid 6 beta14b) <br />
-2. Click on the Docker tab <br />
-3. Add the following line under "Template Repositories" <br />
-4. Then click on add container and select openremote under templates <br />
-5. Put in your library location and port <br />
-6. Profit
+##Install On Other Platforms (like Ubuntu, Synology 5.2 DSM, etc.):
 
-or. . .
+On other platforms, you can run this docker with the following command:
 
-1. Install the plugin in the following linked thread http://lime-technology.com/forum/index.php?topic=39106.0 <br />
-2. Scroll down and click on the logo <br />
-3. Put in your library location and port <br />
-4. Profit
+```
+docker run -d --name="OpenRemoteController" --net="bridge" -p 8080:8080/tcp -v "/path/to/config":"/config":rw -v /etc/localtime:/etc/localtime:ro aptalca/docker-openremote
+```
+
+###Setup Instructions
+- Replace the variable "/path/to/config" with your choice of folder on your system. That is where the config and the library files will reside, and they will survive an update, reinstallation, etc. of the container.
+- To change the port, modify the port listed on the left side in the run command, that is the host side.
+- Access the webui by going to http://SERVERIP:8080/controller
