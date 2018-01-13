@@ -4,7 +4,7 @@ MAINTAINER aptalca
 
 VOLUME ["/config"]
 
-EXPOSE 8080
+EXPOSE 8688
 
 RUN echo $TZ > /etc/timezone && \
 export DEBCONF_NONINTERACTIVE_SEEN=true DEBIAN_FRONTEND=noninteractive && \
