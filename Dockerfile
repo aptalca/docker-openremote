@@ -1,5 +1,5 @@
 
-FROM phusion/baseimage:0.9.17
+FROM phusion/baseimage
 
 MAINTAINER aptalca
 
@@ -13,6 +13,7 @@ dpkg-reconfigure tzdata && \
 usermod -u 99 nobody && \
 usermod -g 100 nobody && \
 apt-get update && apt-get install -y \
+apt-get install tzdata \
 wget \
 oracle-java8-jdk \
 unzip && \
