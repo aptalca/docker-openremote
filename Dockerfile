@@ -1,5 +1,5 @@
 
-FROM phusion/baseimage
+FROM phusion/baseimage:0.9.17
 
 MAINTAINER aptalca
 
