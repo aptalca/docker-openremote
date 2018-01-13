@@ -13,4 +13,7 @@ apt-get install tzdata && \
 dpkg-reconfigure tzdata && \
 usermod -u 99 nobody && \
 usermod -g 100 nobody && \
-apt-get --force-yes install openjdk-8-jdk
+apt-get install -y \
+wget \
+openjdk-8-jdk \
+unzip
