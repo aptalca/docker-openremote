@@ -17,7 +17,7 @@ apt-get install -y \
 wget \
 openjdk-8-jdk \
 unzip&& \
-export JAVA_HOME=/usr && \
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/ && \
 wget https://github.com/openremote/Controller/releases/download/v2.6.0_beta3/OpenRemote-Controller.zip -O /root/OR.zip 
 
 RUN mkdir -p /etc/my_init.d
