@@ -12,4 +12,9 @@ apt-get update && \
 apt-get install tzdata && \
 dpkg-reconfigure tzdata && \
 usermod -u 99 nobody && \
-usermod -g 100 nobody
+usermod -g 100 nobody && \
+apt-get install -y \
+wget \
+openjdk-6-jdk \
+unzip && \
+export JAVA_HOME=/usr
