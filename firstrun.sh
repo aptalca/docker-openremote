@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -d "/config/OpenRemote-Controller-2.1.0" ]; then
+if [ ! -d "/config/OpenRemote-Controller" ]; then
   echo "First install detected, setting up the controller"
   unzip -u /root/OR.zip -d /config/
 else
@@ -10,7 +10,7 @@ fi
 echo "Setting permissions"
 chown -R nobody:users /config
 chmod -R g+rw /config
-cd /config/OpenRemote-Controller-2.1.0/bin
+cd /config/OpenRemote-Controller/bin
 chmod +x openremote.sh
 echo "Starting controller"
 /sbin/setuser nobody sh ./openremote.sh start
