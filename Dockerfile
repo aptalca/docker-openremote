@@ -1,5 +1,5 @@
 
-FROM phusion/baseimage:0.9.17
+FROM phusion/baseimage
 
 MAINTAINER aptalca
 
@@ -14,10 +14,10 @@ usermod -u 99 nobody && \
 usermod -g 100 nobody && \
 apt-get update && apt-get install -y \
 wget \
-openjdk-6-jdk \
+oracle-java8-jdk \
 unzip && \
 export JAVA_HOME=/usr && \
-wget http://sourceforge.net/projects/openremote/files/OpenRemote-Controller-2.1.0.zip/download -O /root/OR.zip 
+wget https://github.com/openremote/Controller/releases/download/v2.6.0_beta3/OpenRemote-Controller.zip -O /root/OR.zip 
 
 RUN mkdir -p /etc/my_init.d
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
