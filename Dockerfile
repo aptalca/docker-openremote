@@ -9,11 +9,11 @@ EXPOSE 8080
 
 RUN echo $TZ > /etc/timezone && \
 export DEBCONF_NONINTERACTIVE_SEEN=true DEBIAN_FRONTEND=noninteractive && \
+apt-get install tzdata &&\
 dpkg-reconfigure tzdata && \
 usermod -u 99 nobody && \
 usermod -g 100 nobody && \
 apt-get update && apt-get install -y \
-apt-get install tzdata \
 wget \
 oracle-java8-jdk \
 unzip && \
